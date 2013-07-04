@@ -1,0 +1,142 @@
+
+/* Main stylesheet */
+
+	/* apply a natural box layout model to all elements */
+	* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* Design styles */
+
+	/* pushdown */
+
+	/* design wrapper */
+	.wrapbg {
+		background-color: #f3f3f3;
+		min-height: 1000px;
+		padding: 20px;
+	}
+
+/* Admin Styles */
+
+.nav-bar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1030;
+}
+
+	/* admin navigation */
+	.navigation-bar {
+		background-color: #303233;
+	}
+
+	.navigation {
+		position: relative;
+		left: 0;
+		display: block;
+		float: left;
+		margin: 0 10px 0 0;
+		list-style: none;
+	}
+
+	.navigation > li {
+		float:left;
+		line-height: 30px;
+	}
+
+	.navigation > li > a {
+		float: none;
+		padding: 10px 15px 10px;
+		text-decoration: none;
+		display: block;
+		color: #767A7D;
+	}
+
+	/* site bar */
+	.site-bar {
+		background-color: #ebeff2;
+		top: 50px;
+	}
+
+	.site-options {
+		float: left;
+		width: 100%;
+		line-height: 35px;
+	}
+
+	.site-options .place {
+		float:left;
+		padding: 10px 15px 10px;
+		p {
+			margin: 0;
+			font-size: 21px;
+		}
+	}
+
+	.site-options .options {
+		float: right;
+		padding: 10px 15px 10px;
+	}
+
+	/* sidebar */
+	.sidebar {
+		display: none;
+		width: 225px;
+		background: #333;
+		height: 100%;
+		color: #767A7D;
+	}
+
+	.sidebar .mode {
+		padding: 15px 15px 0 15px;
+		color: #ffffff;
+		font-size: 21px;
+		line-height: 25px;
+	}
+
+	.side-nav,
+	.side-nav ul {
+		list-style: none;
+		float: left;
+		margin-left: 0px;
+	}
+
+	.side-nav > li {
+		float:left;
+		line-height: 30px;
+		border-bottom: 2px solid #404345;
+		width: 100%;
+		padding: 10px;
+	}
+
+	.side-nav > li > a {
+		text-transform: uppercase;
+	}
+
+	.side-nav > li  a {
+		float: none;
+		text-decoration: none;
+		display: block;
+		color: #767A7D;
+	}
+
+	.side-nav ul li a {
+		color: #ffffff;
+	}
+
+	/* Edit Mode */
+	
+	.edit {
+		.navigation-bar {
+			display: none;
+		}
+
+		.sidebar {
+			display: block;
+		}
+
+		.site-bar {
+			top: 0;
+			padding-left: 225px;
+		}
+	}

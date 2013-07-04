@@ -1,8 +1,1 @@
-
-/* Main stylesheet */
-
-/* @section forms */
-.btn.cancel { margin-left: 0.5rem; }
-.nowrap { white-space: nowrap; }
-
-/* Your customizations here */
+*{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}.wrapbg{background-color:#f3f3f3;min-height:1000px;padding:20px}.nav-bar{position:fixed;top:0;right:0;left:0;z-index:1030}.navigation-bar{background-color:#303233}.navigation{position:relative;left:0;display:block;float:left;margin:0 10px 0 0;list-style:none}.navigation>li{float:left;line-height:30px}.navigation>li>a{float:none;padding:10px 15px 10px;text-decoration:none;display:block;color:#767a7d}.site-bar{background-color:#ebeff2;top:50px}.site-options{float:left;width:100%;line-height:35px}.site-options .place{float:left;padding:10px 15px 10px}.site-options .place p{margin:0;font-size:21px}.site-options .options{float:right;padding:10px 15px 10px}.sidebar{display:none;width:225px;background:#333;height:100%;color:#767a7d}.sidebar .mode{padding:15px 15px 0 15px;color:#fff;font-size:21px;line-height:25px}.side-nav,.side-nav ul{list-style:none;float:left;margin-left:0}.side-nav>li{float:left;line-height:30px;border-bottom:2px solid #404345;width:100%;padding:10px}.side-nav>li>a{text-transform:uppercase}.side-nav>li a{float:none;text-decoration:none;display:block;color:#767a7d}.side-nav ul li a{color:#fff}.edit .navigation-bar{display:none}.edit .sidebar{display:block}.edit .site-bar{top:0;padding-left:225px}
