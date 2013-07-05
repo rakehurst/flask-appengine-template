@@ -13,9 +13,14 @@
 		background-color: #f3f3f3;
 		min-height: 1000px;
 		padding: 20px;
+		margin-left: 225px;
 	}
 
 /* Admin Styles */
+
+.dashboard {
+	font-family: 'proxima-nova', sans-serif;
+}
 
 .nav-bar {
 	position: fixed;
@@ -52,6 +57,10 @@
 		color: #767A7D;
 	}
 
+	.navigation > li > a.active {
+		color: #ffffff;
+	}
+
 	/* site bar */
 	.site-bar {
 		background-color: #ebeff2;
@@ -78,6 +87,25 @@
 		padding: 10px 15px 10px;
 	}
 
+	.site-options .button {
+		background-color: #A9ACAE;
+		color: #ffffff;
+		padding: 7px 30px;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.site-options .button-primary {
+		background-color: #44A0D0;
+	}
+
+	.site-options {
+		#save,
+		#cancel {
+			display: none;
+		}
+	}
+
 	/* sidebar */
 	.sidebar {
 		display: none;
@@ -94,11 +122,28 @@
 		line-height: 25px;
 	}
 
+	.sidebar .collapsed ul {
+		display: none;
+	}
+
+	.sidebar .expanded > a {
+		color: #ffffff;
+	}
+
+	.sidebar li:not(.disabled) a:hover {
+		color: #ffffff;
+	}
+
 	.side-nav,
 	.side-nav ul {
 		list-style: none;
 		float: left;
 		margin-left: 0px;
+		width: 100%;
+	}
+
+	.side-nav li a {
+		padding: 10px;
 	}
 
 	.side-nav > li {
@@ -106,7 +151,6 @@
 		line-height: 30px;
 		border-bottom: 2px solid #404345;
 		width: 100%;
-		padding: 10px;
 	}
 
 	.side-nav > li > a {
@@ -120,13 +164,23 @@
 		color: #767A7D;
 	}
 
+	.side-nav > li > ul > li:hover {
+		background: #404345;
+	}
+
 	.side-nav ul li a {
 		color: #ffffff;
 	}
 
 	/* Edit Mode */
 	
-	.edit {
+	body.edit {
+		padding-top: 55px;
+
+		.text[contenteditable="true"] {
+			outline: 2px solid blue;
+		}
+
 		.navigation-bar {
 			display: none;
 		}
@@ -138,5 +192,14 @@
 		.site-bar {
 			top: 0;
 			padding-left: 225px;
+			background-color: #DEDCDC;
+		}
+		
+		#customise {
+			display: none;
+		}
+
+		#save, #cancel {
+			display: inline;
 		}
 	}

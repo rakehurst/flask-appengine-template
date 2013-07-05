@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <title>{% block title%}Flask on App Engine{% endblock %}</title>
+    <script type="text/javascript" src="//use.typekit.net/ovq4mpa.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <link href="/static/css/bootstrap-{{ bootstrap_version }}.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/static/css/font-awesome.min.css">
     <style> body { padding-top: 90px; } </style> <!-- Bootstrap -->
@@ -18,7 +20,7 @@
     {% block head_script %}{# defer-incapable JS block #}{% endblock %}
 </head>
 <body>
-    <div id="header">
+    <div id="header" class="dashboard">
         {% include 'includes/nav.html' %} {# pull in navbar #}
         {% include 'includes/sidebar.html' %} {# pull in sidebar #}
     </div>

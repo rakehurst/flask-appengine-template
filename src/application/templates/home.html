@@ -9,7 +9,40 @@
 
 <script type="text/javascript">
 	$('#customise').click(function() {
-		$('body').toggleClass('edit');
+		$('body').addClass('edit');
+		$('.place p').text('Home');
+	});
+
+	$('#save, #cancel').click(function() {
+		$('body').removeClass('edit');
+		$('.text').each(function() {
+			$(this).attr('contenteditable', 'false');
+	    });
+		$('.place p').text('Preview Mode');
+		$('.side-nav .expanded').toggleClass('collapsed').toggleClass('expanded');
+		$('.side-nav .disabled').removeClass('disabled');
+	});
+
+	$('.side-nav > .collapsed').click(function(event) {
+		if ($(this).hasClass('disabled') == false) {
+			$(this).removeClass('collapsed').addClass('expanded');
+			$(this).siblings().addClass('disabled');
+		}
+		event.stopPropagation();
+	});
+
+	$('.side-nav ul .collapsed').click(function(event) {
+		$(this).toggleClass('collapsed').toggleClass('expanded');
+	});
+
+	$('.format-text').click(function(event) {
+		$('.text').each(function() {
+		if ($(this).attr('contenteditable') == 'true') {
+			$(this).attr('contenteditable', 'false');
+		} else {
+			$(this).attr('contenteditable', 'true');
+		}
+	    });
 	});
 </script>
 
