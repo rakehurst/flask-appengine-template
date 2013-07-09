@@ -7,12 +7,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-    <title>{% block title%}Flask on App Engine{% endblock %}</title>
+    <title>{% block title%}bOnline{% endblock %}</title>
     <script type="text/javascript" src="//use.typekit.net/ovq4mpa.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <link href="/static/css/bootstrap-{{ bootstrap_version }}.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
-    <style> body { padding-top: 90px; } </style> <!-- Bootstrap -->
     <link href="/static/css/main.css" rel="stylesheet" />
     <link rel="shortcut icon" href="/static/img/favicon.ico" />
     {% block style_block %}{# page-specific CSS #}{% endblock %}
@@ -20,21 +18,16 @@
     {% block head_script %}{# defer-incapable JS block #}{% endblock %}
 </head>
 <body>
-    <div id="header" class="dashboard">
+    <div class="dashboard">
         {% include 'includes/nav.html' %} {# pull in navbar #}
         {% include 'includes/sidebar.html' %} {# pull in sidebar #}
     </div>
-    <div class="wrapbg container" id="maincontent">
+    <div class="wrapbg alongside container">
         {% include 'includes/flash_message.html' %} {# page-level feedback notices #}
-        <div id="body_content">
+        <div class="body_content">
             {% block content %}{# main content area #}{% endblock %}
         </div>
     </div><!-- /container -->
-    <footer>
-        <div id="footer" class="container">
-            {% block footer %}{% endblock %}
-        </div><!-- /footer -->
-    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/{{ jquery_version }}/jquery.min.js"></script>
     <script src="/static/js/lib/bootstrap-{{ bootstrap_version }}.min.js"></script>
     <script src="/static/js/main.js"></script>

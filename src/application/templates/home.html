@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="text"><h1>Accountant 123</h1></div>
-    <div class="text"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p></div>
+    <div class="text"><h1>Welcome to Accountant 123</h1></div>
+    <div class="text"><p>We are an experienced and reputable Accountancy firm in London. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p></div>
 {% endblock %}
 
 {% block tail_script %}
@@ -10,7 +10,7 @@
 <script type="text/javascript">
 	$('#customise').click(function() {
 		$('body').addClass('edit');
-		$('.place p').text('Home');
+		$('.place p').html('<i class="icon-edit"></i> Home');
 	});
 
 	$('#save, #cancel').click(function() {
@@ -31,8 +31,19 @@
 		event.stopPropagation();
 	});
 
-	$('.side-nav ul .collapsed').click(function(event) {
+	$('.side-nav  .collapsed .collapsed').click(function(event) {
 		$(this).toggleClass('collapsed').toggleClass('expanded');
+		event.stopPropagation();
+	});
+
+	$('.sidebar .title').click(function() {
+		if($(this).hasClass('navicon')) {
+			$('.side-nav').slideToggle(function() {
+				$('.navicon').toggleClass('collapsed').toggleClass('expanded');
+				$('.site-bar').toggleClass('extended');
+			});
+			$('.wrapbg').toggleClass('alongside');
+		}
 	});
 
 	$('.format-text').click(function(event) {
@@ -44,6 +55,7 @@
 		}
 	    });
 	});
+
 </script>
 
 {% endblock %}

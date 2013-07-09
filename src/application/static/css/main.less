@@ -1,5 +1,14 @@
+/* --------------------------------------------------------
 
-/* Main stylesheet */
+Description: New application interface demo
+version: 1
+author: Robert Akehurst
+URL: http://bonlineapp.com
+
+----------------------------------------------------------*/
+
+
+/* Global styles */
 
 	/* apply a natural box layout model to all elements */
 	* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
@@ -8,27 +17,47 @@
 
 	/* pushdown */
 
+	body {
+		padding-top: 113px;
+	}
+
 	/* design wrapper */
 	.wrapbg {
 		background-color: #f3f3f3;
 		min-height: 1000px;
 		padding: 20px;
-		margin-left: 225px;
+	}
+
+	.wrapbg.alongside {
+		margin-left: 253px;
 	}
 
 /* Admin Styles */
 
-.dashboard {
-	font-family: 'proxima-nova', sans-serif;
-}
+	.dashboard {
+		font-family: 'proxima-nova', sans-serif;
+		font-size: 16px;
+	}
 
-.nav-bar {
-	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
-	z-index: 1030;
-}
+	.nav-bar { // abstraction for nav bars giving fixed position and z-index above design.
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 9001;
+	}
+
+	[class^="ico-"], [class*=" ico-"] { // abstraction for custom icons applying sizing and background styles.
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		line-height: 16px;
+		margin-top: 1px;
+		vertical-align: text-top;
+		background-image: url("../img/edit-icons.png"); // icons sprite
+		background-position: 0px 0px; // default position overridden for each icon
+		background-repeat: no-repeat;
+	}
 
 	/* admin navigation */
 	.navigation-bar {
@@ -46,7 +75,8 @@
 
 	.navigation > li {
 		float:left;
-		line-height: 30px;
+		line-height: 34px;
+		margin-right: 10px;
 	}
 
 	.navigation > li > a {
@@ -64,13 +94,20 @@
 	/* site bar */
 	.site-bar {
 		background-color: #ebeff2;
-		top: 50px;
+		top: 54px;
 	}
 
 	.site-options {
 		float: left;
 		width: 100%;
-		line-height: 35px;
+		line-height: 39px;
+		.icon-edit {	// This is the icon shown next to site option 'home' in admin bar from AppDesign4.png - set to display none.
+			background-position: -145px -107px;
+			background-size: 700px;
+			height: 20px;
+			width: 20px;
+			opacity: 0.8;
+		}
 	}
 
 	.site-options .place {
@@ -87,41 +124,118 @@
 		padding: 10px 15px 10px;
 	}
 
-	.site-options .button {
-		background-color: #A9ACAE;
+	.site-options .button { // generic button styles
+		background: rgb(171,174,177); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(171,174,177,1) 0%, rgba(168,171,171,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(171,174,177,1)), color-stop(100%,rgba(168,171,171,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(171,174,177,1) 0%,rgba(168,171,171,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(171,174,177,1) 0%,rgba(168,171,171,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(171,174,177,1) 0%,rgba(168,171,171,1) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(171,174,177,1) 0%,rgba(168,171,171,1) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#abaeb1', endColorstr='#a8abab',GradientType=0 ); /* IE6-9 */
 		color: #ffffff;
-		padding: 7px 30px;
+		padding: 0 22px;
 		text-decoration: none;
 		cursor: pointer;
+		border: 1px solid #a5a8aa;
+		border-radius: 2px;
+		min-width: 96px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		display: inline-block;
 	}
 
-	.site-options .button-primary {
-		background-color: #44A0D0;
+	.site-options .button-primary { // primary button styles - changes in colour
+		background: rgb(62,154,203); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(62,154,203,1) 0%, rgba(64,158,208,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(62,154,203,1)), color-stop(100%,rgba(64,158,208,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(62,154,203,1) 0%,rgba(64,158,208,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(62,154,203,1) 0%,rgba(64,158,208,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(62,154,203,1) 0%,rgba(64,158,208,1) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(62,154,203,1) 0%,rgba(64,158,208,1) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e9acb', endColorstr='#409ed0',GradientType=0 ); /* IE6-9 */
+		border-color: #3c96c6;
 	}
 
 	.site-options {
-		#save,
-		#cancel {
-			display: none;
+		#cancel, #save {
+			display: none;  // hidden until 'customise site' is clicked
 		}
 	}
 
 	/* sidebar */
 	.sidebar {
-		display: none;
-		width: 225px;
-		background: #333;
+		display: none;   // hidden until 'customise site' is clicked
+		width: 253px;
 		height: 100%;
 		color: #767A7D;
+		[class^="ico-"], [class*=" ico-"] {  // all icons need margin right to separate from the link
+			margin-right: 10px;
+		}
+		/* custom icons - position in sprite */
+		.ico-format-text {
+			background-position: 0 0;
+		}
+		.ico-insert-image {
+			background-position: 0 -20px;
+		}
+		.ico-add-link {
+			background-position: 0 -148px;
+		}
+		.ico-colours {
+			background-position: 0 -38px;
+		}
+		.ico-fonts {
+			background-position: 0 -167px;
+		}
+		.ico-switch-design {
+			background-position: 0 -112px;
+		}
+		.ico-page-management {
+			background-position: 0 -75px;
+		}
+		.ico-page-seo {
+			background-position: 0 -129px;
+		}
+		.ico-paypal-button {
+			background-position: 0 -93px;
+		}
+		.ico-insert-video {
+			background-position: 0 -57px;
+		}
+	}
+	
+	/* ckeditor placeholder image */
+	.sidebar .ckeditor {
+		margin-bottom: 24px;
+		width: 100%;
 	}
 
-	.sidebar .mode {
-		padding: 15px 15px 0 15px;
-		color: #ffffff;
-		font-size: 21px;
-		line-height: 25px;
+	.sidebar .title {
+			margin: 0;
+			background: #333;
+			font-size: 21px;
+			line-height: 23px;
+		&.mode {
+			padding: 20px 0 16px 20px;
+			color: #ffffff;
+		}
+		&.navicon {  // Using custom javascript to insert this. Does not currently exist on the page.
+			padding: 17px 17px 19px 0;
+			background: #3B3E40;
+			color: #D5D6D7;
+			cursor: pointer;
+			width: 100%;
+			text-align: right;
+			&.collapsed { // Hide and show at a more similar rate to slideToggle but js needs to be customised
+				transform: translate(-203px,0);
+				-webkit-transform: translate(-203px,0);
+				-o-transform: translate(-203px,0);
+				-moz-transform: translate(-203px,0);
+			}
+		}
 	}
-
 	.sidebar .collapsed ul {
 		display: none;
 	}
@@ -134,6 +248,12 @@
 		color: #ffffff;
 	}
 
+	.side-nav {
+		background: #333;
+		height: 100%;
+		padding-top: 18px;
+	}
+
 	.side-nav,
 	.side-nav ul {
 		list-style: none;
@@ -143,7 +263,7 @@
 	}
 
 	.side-nav li a {
-		padding: 10px;
+		padding: 8px 10px 8px 21px;
 	}
 
 	.side-nav > li {
@@ -153,8 +273,13 @@
 		width: 100%;
 	}
 
+	.side-nav>li.expanded {
+		padding-bottom: 35px;
+	}
+
 	.side-nav > li > a {
 		text-transform: uppercase;
+		font-size: 14px;
 	}
 
 	.side-nav > li  a {
@@ -162,6 +287,10 @@
 		text-decoration: none;
 		display: block;
 		color: #767A7D;
+	}
+
+	.side-nav > li > ul > li {
+		padding: 2px 0;
 	}
 
 	.side-nav > li > ul > li:hover {
@@ -178,28 +307,31 @@
 		padding-top: 55px;
 
 		.text[contenteditable="true"] {
-			outline: 2px solid blue;
+			outline: 2px solid blue;  // blue outline on editable areas
 		}
 
 		.navigation-bar {
-			display: none;
+			display: none; // hide navigation bar in edit mode
 		}
 
 		.sidebar {
-			display: block;
+			display: block; // show sidebar in edit mode
 		}
 
 		.site-bar {
 			top: 0;
-			padding-left: 225px;
+			padding-left: 253px;
 			background-color: #DEDCDC;
+		}
+		.site-bar.extended {
+			padding-left: 50px;  // Less padding extends site-bar when menu is collapsed
 		}
 		
 		#customise {
-			display: none;
+			display: none; // hide customise abutton in edit mode
 		}
 
-		#save, #cancel {
-			display: inline;
+		#cancel {
+			display: inline-block; // show cancel button in edit mode
 		}
 	}
