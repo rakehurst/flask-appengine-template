@@ -8,51 +8,72 @@
 {% block tail_script %}
 
 <script type="text/javascript">
+
+	/* Click customise button to enter edit mode */
 	$('#customise').click(function() {
-		$('body').addClass('edit');
-		$('.place p').html('<i class="icon-edit"></i> Home');
+		$('body').addClass('edit');		// global class for styling elements when in edit mode
+		$('.place p').html('<i class="icon-edit"></i> Home');		// change text in .place and add icon
+		$('#exit').css('display','inline-block');		// show exit button to take user back to preview mode
 	});
 
-	$('#save, #cancel').click(function() {
-		$('body').removeClass('edit');
-		$('.text').each(function() {
-			$(this).attr('contenteditable', 'false');
-	    });
-		$('.place p').text('Preview Mode');
-		$('.side-nav .expanded').toggleClass('collapsed').toggleClass('expanded');
-		$('.side-nav .disabled').removeClass('disabled');
-	});
-
+	/* Clicking top level links in sidebar menu */
 	$('.side-nav > .collapsed').click(function(event) {
-		if ($(this).hasClass('disabled') == false) {
-			$(this).removeClass('collapsed').addClass('expanded');
-			$(this).siblings().addClass('disabled');
+		if ($(this).hasClass('disabled') == false) {		// cannot open a link if its disabled
+			$(this).removeClass('collapsed').addClass('expanded');		// expand to show submenu
+			$(this).siblings().addClass('disabled');		// when one is expanded the others are disabled until the user clicks save or cancel
+			$('#cancel').css('display','inline-block');		// show cancel button to allow exit out of the top level, which will re-enable disabled top level links
+			$('#exit').hide();		// hide exit button, the user must save or cancel first
 		}
 		event.stopPropagation();
 	});
 
+	/* Clicking sidebar sub menu links */
 	$('.side-nav  .collapsed .collapsed').click(function(event) {
-		$(this).toggleClass('collapsed').toggleClass('expanded');
+		if ($(this).hasClass('collapsed')) {	// if opening the submenu
+			$(this).toggleClass('collapsed').toggleClass('expanded');		// expand to show submenu
+			$('#save, #cancel').css('display','inline-block');		// show save and cancel
+			$('#exit').hide();		// hide exit button
+		}
+		// else if closing the submenu, nothing should happen. The user must save or cancel first.
 		event.stopPropagation();
 	});
 
+	/* Clicking save or cancel (for demo purposes) */
+	$('#save, #cancel').click(function() {
+		$('.text').attr('contenteditable', 'false');	// remove content editable
+		$('.expanded').each(function() {
+			$(this).toggleClass('collapsed').toggleClass('expanded');	// reset expanded menu items
+		});
+		$('.disabled').each(function() {
+			$(this).removeClass('disabled');	// reset disabled menu items
+		});
+		$('#save, #cancel').hide();		// hide save/cancel because one of them has just been clicked
+		$('#exit').css('display','inline-block');		// show exit button
+	});
+
+	/* Clicking exit */
+	$('#exit').click(function() {
+		$('body').removeClass('edit');		// remove edit mode class
+		$('.place p').text('Preview Mode');	// change place text back to preview mode
+		// no need to remove contenteditable or reset disabled/expanded menus because this has been done with save or cancel.
+		$(this).hide();		// hide the exit button so that it doesnt show in preview mode
+	});
+
+	/* Clicking the top of sidebar menu */
 	$('.sidebar .title').click(function() {
-		if($(this).hasClass('navicon')) {
-			$('.side-nav').slideToggle(function() {
+		if($(this).hasClass('navicon')) {	// For alternative version without collapse. navicon class can be applied after the DOM has loaded
+			$('.side-nav').slideToggle(function() {		// simple slide up/down animation for the menu, this may need to be customised to improve the aesthetics
 				$('.navicon').toggleClass('collapsed').toggleClass('expanded');
 				$('.site-bar').toggleClass('extended');
 			});
-			$('.wrapbg').toggleClass('alongside');
+			$('.wrapbg').toggleClass('alongside');		// When sidebar expands, position the design next to the sidebar so it's not hidden behind
 		}
 	});
 
+	/* When formatting text, add contenteditable=true to everything with class 'text' */
 	$('.format-text').click(function(event) {
 		$('.text').each(function() {
-		if ($(this).attr('contenteditable') == 'true') {
-			$(this).attr('contenteditable', 'false');
-		} else {
 			$(this).attr('contenteditable', 'true');
-		}
 	    });
 	});
 
