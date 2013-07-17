@@ -30,6 +30,8 @@ app.add_url_rule('/examples/cached', 'cached_examples', view_func=views.cached_e
 # Contrived admin-only view example
 app.add_url_rule('/admin_only', 'admin_only', view_func=views.admin_only)
 
+app.add_url_rule('/examples/<int:example_id>', 'view_example', view_func=views.view_example)
+
 # Edit an example
 app.add_url_rule('/examples/<int:example_id>/edit', 'edit_example', view_func=views.edit_example, methods=['GET', 'POST'])
 

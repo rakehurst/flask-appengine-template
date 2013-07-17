@@ -1,0 +1,380 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pre",
+				"preventDefault"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			],
+			[
+				"settings",
+				"Preferences: Settings - Default"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/bonline/flask-appengine-template/src/application/templates/edit_example.html",
+		"/home/bonline/flask-appengine-template/src/application/templates/500.html",
+		"/home/bonline/designs/static/designs/naom38/css/default.css",
+		"/home/bonline/resources-bonline/industries/freight.yaml",
+		"/home/bonline/designs/static/designs/vvm16/css/design.less",
+		"/home/bonline/bonline/deployments/local.py",
+		"/home/bonline/website/signup.py",
+		"/home/bonline/designs/static/elements/featured-projects.less",
+		"/home/bonline/designs/static/designs/naom38/css/design.css",
+		"/home/bonline/designs/static/grid/960.less",
+		"/home/bonline/designs/static/elements/site-header-motto.less",
+		"/home/bonline/website/templates/home.html",
+		"/home/bonline/resources-bonline/designs/naom22.yaml",
+		"/home/bonline/designs/static/designs/naom22/css/design.less",
+		"/home/bonline/designs/static/designs/naom22/css/default.css",
+		"/home/bonline/designs/static/designs/naom22/css/design.css",
+		"/home/bonline/website/templates/select-design.html",
+		"/home/bonline/website/static/js/signup-selections.js",
+		"/home/bonline/bonline/pages/models.py",
+		"/home/bonline/website/static/js/thumbnails.js",
+		"/home/bonline/website/static/js/website-detail.js",
+		"/home/bonline/website/handlers.py",
+		"/home/bonline/website/static/js/book-consultation.js",
+		"/home/bonline/website/templates/website-details.html",
+		"/home/bonline/website/templates/website-details-form.html",
+		"/home/bonline/website/main.py",
+		"/home/bonline/bonline/Makefile",
+		"/home/bonline/resources-bonline/resources/remote.py",
+		"/home/bonline/website/app.yaml",
+		"/home/bonline/resources-bonline/industries/barber.yaml",
+		"/home/bonline/resources-bonline/industries/accountant.yaml",
+		"/home/bonline/designs/static/html5reset/css/newstyle.css",
+		"/home/bonline/website/resources/remote.py",
+		"/home/bonline/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/bonline/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/home/bonline/bonline",
+			"/home/bonline/website"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"fishery_",
+			"overflow:hidden",
+			":#",
+			":#5",
+			"#",
+			"class=\"readmore\">Read More &raquo;</a>",
+			"required",
+			"*",
+			"DATA_VERSION",
+			" data-industry=\"",
+			"industry",
+			"<a href=\"",
+			"				<a href=\"/wdetails",
+			"<a href=\"/",
+			"select-button",
+			"redirect",
+			"wdetails",
+			"ajax",
+			"details-form",
+			"ajax",
+			"def pos",
+			"industry-landing"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/home/bonline/bonline"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/bonline/designs"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/bonline/resources-bonline"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/bonline/website"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"project": "",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"nav",
+				"src/application/templates/includes/nav.html"
+			],
+			[
+				"base",
+				"src/application/templates/base.html"
+			],
+			[
+				"news",
+				"designs/static/html5reset/css/newstyle.css"
+			],
+			[
+				"naom38defa",
+				"designs/static/designs/naom38/css/default.css"
+			],
+			[
+				"freight",
+				"resources-bonline/industries/freight.yaml"
+			],
+			[
+				"local",
+				"bonline/deployments/local.py"
+			],
+			[
+				"vvm16design",
+				"designs/static/designs/vvm16/css/design.less"
+			],
+			[
+				"header-",
+				"designs/static/elements/site-header-motto.less"
+			],
+			[
+				"960",
+				"designs/static/grid/960.less"
+			],
+			[
+				"naom38design",
+				"designs/static/designs/naom38/css/design.css"
+			],
+			[
+				"featured-projec",
+				"designs/static/elements/featured-projects.less"
+			],
+			[
+				"naom38defaul",
+				"designs/static/designs/naom38/css/default.css"
+			],
+			[
+				"naom38desig",
+				"designs/static/designs/naom38/css/design.less"
+			],
+			[
+				"naom38",
+				"resources-bonline/designs/naom38.yaml"
+			],
+			[
+				"naom22desi",
+				"designs/static/designs/naom22/css/design.css"
+			],
+			[
+				"naom22design",
+				"designs/static/designs/naom22/css/design.less"
+			],
+			[
+				"naom22defau",
+				"designs/static/designs/naom22/css/default.css"
+			],
+			[
+				"naom22",
+				"resources-bonline/designs/naom22.yaml"
+			],
+			[
+				"home",
+				"website/templates/home.html"
+			],
+			[
+				"newst",
+				"designs/static/html5reset/css/newstyle.css"
+			],
+			[
+				"makefil",
+				"bonline/Makefile"
+			],
+			[
+				"account",
+				"resources-bonline/industries/accountant.yaml"
+			],
+			[
+				"barber",
+				"resources-bonline/industries/barber.yaml"
+			],
+			[
+				"app",
+				"website/app.yaml"
+			],
+			[
+				"remote",
+				"resources-bonline/resources/remote.py"
+			],
+			[
+				"hand",
+				"website/handlers.py"
+			],
+			[
+				"signu",
+				"website/signup.py"
+			],
+			[
+				"main",
+				"main.py"
+			],
+			[
+				"website-",
+				"templates/website-details-form.html"
+			],
+			[
+				"webs",
+				"static/js/website-detail.js"
+			],
+			[
+				"thumbn",
+				"static/js/thumbnails.js"
+			],
+			[
+				"sig",
+				"signup.py"
+			],
+			[
+				"select",
+				"static/js/signup-selections.js"
+			],
+			[
+				"sele",
+				"templates/select-design.html"
+			],
+			[
+				"select-d",
+				"templates/select-design.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 247.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

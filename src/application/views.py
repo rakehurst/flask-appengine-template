@@ -25,15 +25,30 @@ from models import ExampleModel
 cache = Cache(app)
 
 def home():
-    return redirect(url_for('list_examples'))
+    """List all examples"""
+    examples = ExampleModel.query()
+    form = ExampleForm()
+    if form.validate_on_submit():
+        example = ExampleModel(
+            example_name = form.example_name.data,
+            example_description = form.example_description.data,
+            added_by = users.get_current_user()
+        )
+        try:
+            example.put()
+            example_id = example.key.id()
+            flash(u'Example %s successfully saved.' % example_id, 'success')
+            return redirect(url_for('list_examples'))
+        except CapabilityDisabledError:
+            flash(u'App Engine Datastore is currently in read-only mode.', 'info')
+            return redirect(url_for('list_examples'))
+    return render_template('home.html', examples=examples, form=form)
 
 
 def say_hello(username):
     """Contrived example to demonstrate Flask's url routing capabilities"""
     return 'Hello %s' % username
 
-
-@login_required
 def list_examples():
     """List all examples"""
     examples = ExampleModel.query()
@@ -53,6 +68,26 @@ def list_examples():
             flash(u'App Engine Datastore is currently in read-only mode.', 'info')
             return redirect(url_for('list_examples'))
     return render_template('list_examples.html', examples=examples, form=form)
+
+def view_example(example_id):
+    """view examples"""
+    example = ExampleModel.get_by_id(example_id)
+    form = ExampleForm()
+    if form.validate_on_submit():
+        example = ExampleModel(
+            example_name = form.example_name.data,
+            example_description = form.example_description.data,
+            added_by = users.get_current_user()
+        )
+        try:
+            example.put()
+            example_id = example.key.id()
+            flash(u'Example %s successfully saved.' % example_id, 'success')
+            return redirect(url_for('list_examples'))
+        except CapabilityDisabledError:
+            flash(u'App Engine Datastore is currently in read-only mode.', 'info')
+            return redirect(url_for('list_examples'))
+    return render_template('view_example.html', example=example, form=form)
 
 
 @login_required
